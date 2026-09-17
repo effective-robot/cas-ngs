@@ -1,0 +1,71 @@
+/*!
+ * CASNGS Earth — selectable block animations.
+ * Registered via register_block_style() in functions.php. The engine adds
+ * .is-in when a block scrolls into view; CSS does the rest. Editor-safe:
+ * inside the block editor every style renders in its final (visible) state.
+ */
+
+.is-style-anim-fade-up,
+.is-style-anim-slide-right,
+.is-style-anim-cinematic,
+.is-style-anim-blur-rise,
+.is-style-anim-scale-in {
+  will-change: opacity, transform, filter, clip-path;
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    clip-path 1.1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.is-style-anim-fade-up { opacity: 0; transform: translateY(32px); }
+.is-style-anim-slide-right { opacity: 0; transform: translateX(44px); }
+.is-style-anim-cinematic { opacity: 0; clip-path: inset(0 100% 0 0 round 12px); transform: scale(1.04); }
+.is-style-anim-blur-rise { opacity: 0; transform: translateY(18px); filter: blur(14px); }
+.is-style-anim-scale-in { opacity: 0; transform: scale(0.9); }
+
+.is-style-anim-fade-up.is-in,
+.is-style-anim-slide-right.is-in,
+.is-style-anim-blur-rise.is-in,
+.is-style-anim-scale-in.is-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.is-style-anim-cinematic.is-in {
+  opacity: 1;
+  clip-path: inset(0 0 0 0 round 12px);
+  transform: none;
+}
+
+/* The Visual Editor always shows the finished state. */
+.editor-styles-wrapper .is-style-anim-fade-up,
+.editor-styles-wrapper .is-style-anim-slide-right,
+.editor-styles-wrapper .is-style-anim-cinematic,
+.editor-styles-wrapper .is-style-anim-blur-rise,
+.editor-styles-wrapper .is-style-anim-scale-in,
+.block-editor-block-list__layout .is-style-anim-fade-up,
+.block-editor-block-list__layout .is-style-anim-slide-right,
+.block-editor-block-list__layout .is-style-anim-cinematic,
+.block-editor-block-list__layout .is-style-anim-blur-rise,
+.block-editor-block-list__layout .is-style-anim-scale-in {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  clip-path: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-style-anim-fade-up,
+  .is-style-anim-slide-right,
+  .is-style-anim-cinematic,
+  .is-style-anim-blur-rise,
+  .is-style-anim-scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}
