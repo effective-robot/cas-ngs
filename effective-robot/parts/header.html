@@ -1,22 +1,24 @@
-<!-- wp:group {"metadata":{"name":"Site Header Dock"},"tagName":"header","className":"site-header-dock","backgroundColor":"glass","style":{"border":{"radius":"22px"},"spacing":{"padding":{"top":"0.65rem","bottom":"0.65rem","left":"1.25rem","right":"1rem"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<header class="wp-block-group site-header-dock has-glass-background-color has-background" style="border-radius:22px;padding-top:0.65rem;padding-right:1rem;padding-bottom:0.65rem;padding-left:1.25rem">
+<!-- wp:group {"metadata":{"name":"custom nav header 0"},"tagName":"header","className":"custom-nav-header-0","align":"full","layout":{"type":"constrained"}} -->
+<header class="wp-block-group alignfull custom-nav-header-0">
+	<!-- wp:group {"metadata":{"name":"Custom Nav Header 0 — Dock"},"className":"custom-nav-header-0__dock","align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group alignwide custom-nav-header-0__dock" data-custom-nav-dock>
+		<!-- wp:group {"metadata":{"name":"Brand"},"className":"custom-nav-header-0__brand","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+		<div class="wp-block-group custom-nav-header-0__brand">
+			<!-- wp:site-logo {"width":34,"className":"custom-nav-header-0__logo"} /-->
+			<!-- wp:site-title {"level":0,"className":"custom-nav-header-0__title","style":{"typography":{"fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"},"typography":{"textDecoration":"none"}}}}} /-->
+		</div>
+		<!-- /wp:group -->
 
-	<!-- wp:group {"metadata":{"name":"Brand"},"style":{"spacing":{"blockGap":"0.65rem"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
-	<div class="wp-block-group">
-		<!-- wp:site-logo {"width":34} /-->
-		<!-- wp:site-title {"level":0,"style":{"typography":{"fontStyle":"normal","fontWeight":"600"},"elements":{"link":{"color":{"text":"var:preset|color|contrast"},"typography":{"textDecoration":"none"}}}}} /-->
+		<!-- wp:navigation {"metadata":{"name":"Editable Primary Navigation"},"className":"custom-nav-header-0__navigation","overlayMenu":"mobile","icon":"menu","layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"0.35rem"}}} /-->
+
+		<!-- wp:buttons {"metadata":{"name":"Header CTA"},"className":"custom-nav-header-0__actions","layout":{"type":"flex","justifyContent":"right"}} -->
+		<div class="wp-block-buttons custom-nav-header-0__actions">
+			<!-- wp:button {"metadata":{"name":"Header CTA Button"},"className":"custom-nav-header-0__cta","backgroundColor":"contrast","textColor":"base","style":{"border":{"radius":"999px"}}} -->
+			<div class="wp-block-button custom-nav-header-0__cta"><a class="wp-block-button__link has-base-color has-contrast-background-color has-text-color has-background wp-element-button" style="border-radius:999px">Get in touch</a></div>
+			<!-- /wp:button -->
+		</div>
+		<!-- /wp:buttons -->
 	</div>
 	<!-- /wp:group -->
-
-	<!-- wp:navigation {"overlayMenu":"mobile","icon":"menu","layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"1.75rem"}}} /-->
-
-	<!-- wp:buttons {"metadata":{"name":"Header CTA"},"layout":{"type":"flex","justifyContent":"right"}} -->
-	<div class="wp-block-buttons">
-		<!-- wp:button {"backgroundColor":"contrast","textColor":"base","style":{"border":{"radius":"999px"}}} -->
-		<div class="wp-block-button"><a class="wp-block-button__link has-base-color has-contrast-background-color has-text-color has-background wp-element-button" style="border-radius:999px">Get in touch</a></div>
-		<!-- /wp:button -->
-	</div>
-	<!-- /wp:buttons -->
-
 </header>
 <!-- /wp:group -->
